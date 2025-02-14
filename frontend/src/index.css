@@ -1,0 +1,531 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'Avenir', 'Titillium Web', 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url('./assets/front-page-image.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #333;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #888;  /* even lighter on hover */
+    cursor: pointer;
+}
+/* Variables */
+:root {
+    --icon-background-color: hsl(0, 0%, 70%, 0.5);
+    --item-hover-bg-color: hsl(0, 0%, 50%, 0.8);
+    --icon-hover-bg-color: hsl(0, 0%, 70%, 0.8);
+    --button-bg-color: #1778F2;
+    --button-hover-bg-color: hsla(213, 81%, 45%);
+    --bg-black-layer-color: hsl(0, 0%, 0%, 0.5);
+    --vote-card-bg-color: #121212;
+}
+
+.front-page {
+    min-height: 100vh;
+    background-color: var(--bg-black-layer-color);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.front-nav-bar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.front-nav-container {
+    display: flex;
+    flex-flow: row nowrap;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    color: white;
+}
+
+.front-nav-left {
+    display: flex;
+    flex-flow: row-nowrap;
+}
+
+.front-project-name {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: end;
+}
+
+.front-project-logo {
+    background-image: url("./assets/vote-icon.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    filter: invert(1);
+}
+
+.vote {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.ly {
+    font-size: 1.5rem;
+    padding-bottom: 2px;
+    font-weight: bold;
+}
+
+.front-nav-right {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+}
+
+.front-nav-items {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 30px;
+}
+
+.front-nav-item {
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.front-nav-item:hover {
+    background-color: var(--item-hover-bg-color);
+    cursor: pointer;
+}
+
+.front-nav-icons {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10px;
+}
+
+.front-nav-icon {
+    padding: 15px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background-color: var(--icon-background-color);
+    color: white;
+}
+
+.front-nav-icon:hover {
+    background-color: var(--icon-hover-bg-color);
+    cursor: pointer;
+}
+
+.main-nav-profile {
+    background-color: var(--icon-background-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.main-nav-profile:hover {
+    background-color: var(--icon-hover-bg-color);
+    cursor: pointer;
+}
+
+.front-project-introduction {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: center;
+    flex: 1;
+    color: white;
+    width: 55%;
+    padding-top: 8%;
+    gap: 15px;
+}
+
+.front-welcome {
+    font-size: 3.2rem;
+    font-weight: bold;
+}
+
+.front-text-1 {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.front-text-2 {
+    font-size: 1.1rem;
+}
+
+.front-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10px;
+}
+
+.front-button {
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: none;
+    font-size: 1rem;
+    background-color: var(--button-bg-color);
+    color: white;
+}
+
+.front-button:hover {
+    background-color: var(--button-hover-bg-color);
+    cursor: pointer;
+}
+
+.main-page {
+    background-color: hsl(0, 0%, 0%, 0.5);
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+
+.main-introduction {
+    display: flex;
+    flex-flow: column nowrap;  
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 10px;
+    padding-bottom: 2%;
+}
+
+.main-explore-votes {
+    font-size: 3.5rem;
+}
+
+.main-explore-text {
+    font-size: 1.2rem;
+    width: 60%;
+    text-align: center;
+}
+
+.ongoing-votes {
+    color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+    padding: 0 10%;
+}
+
+.votes-introduction h1 {
+    font-size: 1.5rem;
+
+}
+
+.votes-introduction {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.votes-introduction-text {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5px;
+}
+
+.create-vote-button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: none;
+    background-color: var(--icon-background-color);
+    color: white;
+    font-size: 1rem;
+}
+
+.create-vote-button:hover {
+    background-color: var(--icon-hover-bg-color);
+    cursor: pointer;
+}
+
+
+
+.vote-card {
+    background-color: var(--vote-card-bg-color);
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.vote-card-information {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3px;
+}
+
+.vote-card-buttons {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.vote-card-button {
+    font-size: 1rem;
+    padding: 15px 40px;
+    height: 60%;
+    border-radius: 20px;
+    border: none;
+    box-shadow: none;
+    color: white;
+    background-color: var(--icon-background-color);
+}
+
+.vote-card-button:hover {
+    background-color: var(--icon-hover-bg-color);
+    cursor: pointer;
+}
+
+.vote-card-container {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 15px;
+}
+
+.vote-card-organizer-buttons {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 7px;
+}
+
+.vote-card-organizer-button {
+    padding: 5px 20px;
+    border: none;
+    box-shadow: none;
+    border-radius: 10px;
+    background-color: var(--icon-background-color);
+    color: white;
+    font-size: 0.9rem;
+}
+
+.vote-card-organizer-button:hover {
+    background-color: var(--icon-hover-bg-color);
+    cursor: pointer;
+}
+
+.vote-form-container {
+    height: 100vh;
+    background-color: var(--bg-black-layer-color);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    background-color: var(--vote-card-bg-color);
+}
+
+.vote-form {
+    background-color: hsla(0, 0%, 4%);
+    height: fit-content;
+    width: fit-content;
+    padding: 50px;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: start;
+    gap: 10px;
+}
+
+.form-purpose {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+.form-purpose textarea {
+    border: none;
+    outline: none;
+    padding: 2px;
+    border-radius: 5px;
+    height: 100px;
+}
+
+.form-category select {
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.form-is-public {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.submit-form-btn {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.submit-form-btn:hover {
+    background-color: var(--button-hover-bg-color);
+    cursor: pointer;
+}
+
+.vote-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas:    
+        "v v v o"
+        "v v v o"
+        "c c c o";
+    padding: 20px;
+    gap: 10px;
+}
+
+.vote-page-vote {
+    grid-area: v;
+    background-color: var(--vote-card-bg-color);
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+
+.vote-section-introduction {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.introduction-tags {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+}
+
+.introduction-tag {
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.vote-page-comment {
+    grid-area: c;
+    background-color: var(--vote-card-bg-color);
+    border-radius: 20px;
+}
+
+.vote-page-others {
+    grid-area: o;
+    background-color: var(--vote-card-bg-color);
+    border-radius: 20px;
+}
+
+.vote-section-candidates {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.candidate-card {
+    display: grid;
+    grid-template-areas: 
+        "n p bar bar bar btn";
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--icon-background-color);
+    gap: 20px;
+}
+
+.candidate-card-name {
+    grid-area: n;
+}
+
+.candidate-card-percentage {
+    grid-area: p;
+}
+
+.candidate-card-progress-bar {
+    grid-area: bar;
+    background-color: white;
+    border-radius: 10px;
+    height: 80%;
+}
+
+.candidate-card-vote-btn {
+    grid-area: btn;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: none;
+    font-family: mon;
+}
+
+.btn {
+    width: fit-content;
+    padding: 10px;
+}
+
+.candidate-form-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
